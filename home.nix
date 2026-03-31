@@ -20,11 +20,15 @@
     bottom
     gnupg
     pinentry-curses
+    git-credential-manager
+    gh
   ];
 
   services.gpg-agent = {
     enable = true;
-    pinentryPackage = pkgs.pinentry-curses;
+    pinentry = {
+      package = pkgs.pinentry-curses;
+    };
     defaultCacheTtl = 3600;
   };
 
