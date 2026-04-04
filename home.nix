@@ -73,6 +73,13 @@
       gl = "git log --oneline --graph --decorate";
       gd = "git diff";
 
+      # bun
+      br = "bun run";
+      bi = "bun install";
+      ba = "bun add";
+      bx = "bun x";
+      bb = "bun build";
+
       # gnupg
       gpsk = "gpg --list-secret-keys --keyid-format LONG";
       gpgk = "gpg --full-generate-key";
