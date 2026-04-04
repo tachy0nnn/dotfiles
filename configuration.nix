@@ -35,6 +35,7 @@
     unzip
     bubblewrap
     libsecret
+    tmux
   ];
 
   # nix-ld
