@@ -47,6 +47,8 @@
     extraGroups = [ "wheel" ];
   };
 
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   # This value determines the NixOS release from which the default
   # settings for stateful data were taken.
   system.stateVersion = "25.11";

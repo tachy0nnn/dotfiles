@@ -22,6 +22,9 @@
     pinentry-curses
     git-credential-manager
     gh
+    rustup
+    pkg-config
+    openssl
   ];
 
   services.gpg-agent = {
@@ -146,6 +149,11 @@
         hostname = "github.com";
         user = "git";
         identityFile = "~/.ssh/id_ed25519";
+      };
+      "opi3b" = {
+        hostname = "192.168.3.10";
+        user = "root";
+        identityFile = "~/.ssh/id_ed25519_opi";
       };
     };
   };
