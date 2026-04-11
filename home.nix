@@ -25,6 +25,8 @@
     rustup
     pkg-config
     openssl
+    zig
+    zls
   ];
 
   services.gpg-agent = {
