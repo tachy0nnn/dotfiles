@@ -25,6 +25,9 @@
     options = "--delete-older-than 7d";
   };
 
+  services.dbus.enable = true;
+  security.polkit.enable = true;
+
   # hostname
   networking.hostName = "nixos";
   environment.systemPackages = with pkgs; [
@@ -36,6 +39,7 @@
     bubblewrap
     libsecret
     tmux
+    glib
   ];
 
   # nix-ld
@@ -44,8 +48,17 @@
 
   users.users.yon = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "podman" ];
   };
+
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    dockerSocket.enable = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
+
+  virtualisation.containers.enable = true;
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 

@@ -27,6 +27,7 @@
     openssl
     zig
     zls
+    podman-compose
   ];
 
   services.gpg-agent = {
@@ -38,7 +39,7 @@
   };
 
   home.sessionVariables = {
-    PATH = "$HOME/.bun/bin:$PATH";
+    PATH = "$HOME/.local/bin:$HOME/.bun/bin:$PATH";
     GOOGLE_CLOUD_PROJECT = "tryandgoaroundme";
   };
 
@@ -145,7 +146,6 @@
 
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";
     matchBlocks = {
       "github.com" = {
         hostname = "github.com";
@@ -157,6 +157,7 @@
         user = "root";
         identityFile = "~/.ssh/id_ed25519_opi";
       };
+      "*".addKeysToAgent = "yes";
     };
   };
 
